@@ -41,3 +41,37 @@
 - sequential chat: customer provide the necessary information and later a human can intervene, like a call centre. onboarding personal information agent, onboarding issue agent, customer engagement agent
 - when having multiple agents, we need to orchestrate the flow of the chat, which will orchestrate the chat between the agents
 - summary prompt method : where the agents will extract the details and problems of the user that they describe to the llm agent
+- code writer agent : an engineer who is accompained to write code, assistantAgent is designed to write code
+- code executor agent : Conversable Agent, needs the executor config which, 
+
+## Agents that code with skills
+- teach agents how to do things so that the tokens used to complete the tasks would be cheaper and easier
+- function has doc string which has description of the function
+- executor.format_fuctoins_for_prompt : this function will give a direction to the executor agent on how to write the code and to use the existing functions already defined. this tag will make use of the doc strings defined for each function
+- **Group Chat with the agents** : define different type of agents, and let them in-between them figure out which agent will do what. We will define the agents. 
+Later we will use their conversation to use in another group chat
+the main members in the chat would be : planner, executer, writer, user, engineer
+group chat manager is an autogent agent which will direct the conversation, which will manage the group chat and the messages in the chat
+
+## Building a financial application
+- This application will be used to perform stock analysis, predict and perform and suggest appropriate investment methods
+### Goals of the App
+- takes as an input asset tickets
+- downloads asset price data and analyzes them 
+- retrieve or compute the ratios: P/E ratio, forward P/E, dividends, price to book, debt/eq, roe
+- analyze the correlation between the stocks
+- plot their normalized prices for compensation
+- writes a financial report about these assets and then analyzes and summarizes these news headlines
+- this will also use different reviewers:
+    - Legal reviewer
+    - Text/Data alignment reviewer
+    - Consistency reviewer
+    - Completion reviewer
+- refines the report based on previous criticisms
+- saves the final report to a markdown file with a normalised price chart
+
+### Prompt Engineering
+- Make sure you are directing the LLM to the exact way you want. You should prevent the LLM hellucination in the response you are getting
+
+### Streamlit app
+- 
